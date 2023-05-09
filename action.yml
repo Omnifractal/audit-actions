@@ -1,0 +1,40 @@
+name: 'Send Request Action'
+description: 'Send a POST request to the API with a list of pages as input'
+inputs:
+  pages:
+    description: 'A list of page IDs to audit'
+    required: true
+  apiKey:
+    description: 'API key for authorization'
+    required: true
+  waitForResults:
+    description: 'Wait for audits to finish'
+    required: false
+  timeout:
+    description: 'How long to wait for audits to finish, in seconds. Default is 300 (5 minutes).'
+    required: false
+  budgetsPath:
+    description: 'Path to the Lighthouse budget file'
+    required: false
+  branch:
+    description: 'Branch name'
+    required: false
+  repository:
+    description: 'Repository name'
+    required: false
+  commit_sha:
+    description: 'Commit SHA'
+    required: false
+  commit_message:
+    description: 'Commit message'
+    required: false
+  commit_author:
+    description: 'Commit author'
+    required: false
+  commit_author_email:
+    description: 'Commit author email'
+    required: false
+
+runs:
+  using: 'node16'
+  main: 'dist/index.js'

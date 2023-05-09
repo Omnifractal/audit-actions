@@ -1,0 +1,18 @@
+{
+  "env": {
+    "targets": {
+      "node": 18
+    }
+  },
+  "jsc": {
+    "parser": {
+      "dynamicImport": true,
+      "syntax": "typescript"
+    },
+    "target": "esnext"
+  },
+  "module": {
+    "type": "commonjs"
+  },
+  "sourceMaps": "inline"
+}
