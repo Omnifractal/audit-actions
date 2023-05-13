@@ -6279,7 +6279,8 @@ function validateTimeout(timeout) {
             const { finishedAudits, timeoutOccurred } = yield waitForAuditsCompletion(auditTrackingIDs, timeout);
             const messageParts = [];
             finishedAudits.forEach((audit) => {
-                messageParts.push(`- Page: ${audit.page_name}.\n  Profile: ${audit.profile_name}.\n  Status: ${audit.status}.\n`);
+                const emoji = audit.status === 'completed' ? '✅' : '❌';
+                messageParts.push(`${emoji} Page: ${audit.page_name}.\n  Profile: ${audit.profile_name}.\n  Status: ${audit.status}.\n`);
                 if (audit.message) {
                     messageParts.push(`${formatSpaces(audit.message)}\n`);
                 }
