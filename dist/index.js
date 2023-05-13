@@ -6280,7 +6280,7 @@ function validateTimeout(timeout) {
             const messageParts = [];
             finishedAudits.forEach((audit) => {
                 const emoji = audit.status === 'completed' ? '✅' : '❌';
-                messageParts.push(`${emoji} Page: ${audit.page_name}.\n  Profile: ${audit.profile_name}.\n  Status: ${audit.status}.\n`);
+                messageParts.push(`- Page: ${audit.page_name} ${emoji}\n  Profile: ${audit.profile_name}\n  Status: ${audit.status}\n`);
                 if (audit.message) {
                     messageParts.push(`${formatSpaces(audit.message)}\n`);
                 }
